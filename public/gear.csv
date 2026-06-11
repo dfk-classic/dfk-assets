@@ -1,0 +1,121 @@
+category,equipmentType,equipmentTypeName,displayId,enumName,name,imageUrl,hasArt
+weapon,2,2H Axe,0,ANCIENT_GREATAXE,Ancient Greataxe,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/2-0.png,false
+weapon,2,2H Axe,1,GORE_AXE,Gore Axe,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/2-1.png,true
+weapon,2,2H Axe,2,SAVAGE_AXE,Savage Axe,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/2-2.png,true
+weapon,2,2H Axe,3,BRONZE_HALF_MOON_AXE,Bronze Half-Moon Axe,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/2-3.png,true
+weapon,2,2H Axe,4,SQUIRES_HALBERD,Squire's Halberd,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/2-4.png,true
+weapon,2,2H Axe,5,LEVIATHANS_RAGE,Leviathan's Rage,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/2-5.png,true
+weapon,3,Bow,0,ANCIENT_LONGBOW,Ancient Longbow,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/3-0.png,false
+weapon,3,Bow,1,GORE_BOW,Gore Bow,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/3-1.png,true
+weapon,3,Bow,2,STICK_N_STRING,Stick n' String,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/3-2.png,true
+weapon,3,Bow,3,MAPLE_LONGBOW,Maple Longbow,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/3-3.png,true
+weapon,3,Bow,4,SQUIRES_RECURVE_BOW,Squire's Recurve Bow,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/3-4.png,true
+weapon,3,Bow,5,GORE_LONGBOW,Gore Longbow,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/3-5.png,true
+weapon,3,Bow,6,FARSTRIKER,Farstriker,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/3-6.png,true
+weapon,4,Dagger,0,ANCIENT_DAGGER,Ancient Dagger,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/4-0.png,false
+weapon,4,Dagger,1,FLINT_KNIFE,Flint Knife,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/4-1.png,true
+weapon,4,Dagger,2,BRONZE_GLADIUS,Bronze Gladius,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/4-2.png,true
+weapon,4,Dagger,3,SQUIRES_DAGGER,Squire's Dagger,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/4-3.png,true
+weapon,4,Dagger,4,RIPFANG,Ripfang,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/4-4.png,true
+weapon,5,Gloves,0,ANCIENT_GLOVES,Ancient Gloves,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/5-0.png,false
+weapon,5,Gloves,1,WOODEN_KNUCKLES,Wooden Knuckles,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/5-1.png,true
+weapon,5,Gloves,2,BRONZE_CAESTI,Bronze Caesti,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/5-2.png,true
+weapon,5,Gloves,3,SQUIRES_GLOVES,Squire's Gloves,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/5-3.png,true
+weapon,6,1H Mace,0,ANCIENT_MACE,Ancient Mace,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/6-0.png,false
+weapon,6,1H Mace,1,DRIFTWOOD_SHILLELAGH,Driftwood Shillelagh,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/6-1.png,true
+weapon,6,1H Mace,2,MAPLE_CLUB,Maple Club,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/6-2.png,true
+weapon,6,1H Mace,3,SQUIRES_MACE,Squire's Mace,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/6-3.png,true
+weapon,6,1H Mace,4,CLAW_CUDGEL,Claw Cudgel,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/6-4.png,true
+weapon,6,1H Mace,5,DEEPMAUL,Deepmaul,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/6-5.png,true
+weapon,8,1H Spear,0,ANCIENT_JOSEON,Ancient Joseon,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/8-0.png,false
+weapon,8,1H Spear,1,SHARPENED_STICK,Sharpened Stick,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/8-1.png,true
+weapon,8,1H Spear,2,BRONZE_SHORTSPEAR,Bronze Shortspear,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/8-2.png,true
+weapon,8,1H Spear,3,SQUIRES_LIGHT_SPEAR,Squire's Light Spear,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/8-3.png,true
+weapon,9,2H Spear,0,ANCIENT_LONGSPEAR,Ancient Longspear,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/9-0.png,false
+weapon,9,2H Spear,1,DRIFTWOOD_PIKE,Driftwood Pike,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/9-1.png,true
+weapon,9,2H Spear,2,BRONZE_LONGSPEAR,Bronze Longspear,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/9-2.png,true
+weapon,9,2H Spear,3,SQUIRES_HEAVY_SPEAR,Squire's Heavy Spear,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/9-3.png,true
+weapon,10,Staff,0,ANCIENT_HOLY_STAFF,Ancient Holy Staff,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/10-0.png,false
+weapon,10,Staff,1,GORE_STAFF,Gore Staff,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/10-1.png,true
+weapon,10,Staff,2,GNARLED_STAFF,Gnarled Staff,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/10-2.png,true
+weapon,10,Staff,3,MAPLE_STAFF,Maple Staff,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/10-3.png,true
+weapon,10,Staff,4,SQUIRES_STAFF,Squire's Staff,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/10-4.png,true
+weapon,10,Staff,5,CORRUPTED_STAFF,Corrupted Staff,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/10-5.png,true
+weapon,10,Staff,6,SIRENSONG,Sirensong,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/10-6.png,true
+weapon,11,1H Sword,0,ANCIENT_SWORD,Ancient Sword,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/11-0.png,false
+weapon,11,1H Sword,1,GORE_BLADE,Gore Blade,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/11-1.png,true
+weapon,11,1H Sword,2,TOY_SWORD,Toy Sword,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/11-2.png,true
+weapon,11,1H Sword,3,BRONZE_SPATHA,Bronze Spatha,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/11-3.png,true
+weapon,11,1H Sword,4,SQUIRES_SWORD,Squire's Sword,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/11-4.png,true
+weapon,11,1H Sword,5,CORALBRAND,Coralbrand,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/11-5.png,true
+weapon,12,2H Sword,0,ANCIENT_GREATSWORD,Ancient Greatsword,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/12-0.png,false
+weapon,12,2H Sword,1,EGGSCALIBUR,Eggscalibur,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/12-1.png,true
+weapon,12,2H Sword,2,IGNEOUS_BUTCHER,Igneous Butcher,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/12-2.png,true
+weapon,12,2H Sword,3,BRONZE_GREATSWORD,Bronze Greatsword,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/12-3.png,true
+weapon,12,2H Sword,4,SQUIRES_GREATSWORD,Squire's Greatsword,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/12-4.png,true
+weapon,12,2H Sword,5,LIVING_BLADE,Living Blade,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/12-5.png,true
+weapon,12,2H Sword,6,TIDECLEAVER,Tidecleaver,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/12-6.png,true
+weapon,13,Wand,0,ANCIENT_WAND,Ancient Wand,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/13-0.png,false
+weapon,13,Wand,1,DEMONS_DRUMSTICK,Demon's Drumstick,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/13-1.png,true
+weapon,13,Wand,2,GNARLED_WAND,Gnarled Wand,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/13-2.png,true
+weapon,13,Wand,3,MAPLE_WAND,Maple Wand,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/13-3.png,true
+weapon,13,Wand,4,SQUIRES_WAND,Squire's Wand,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/13-4.png,true
+weapon,13,Wand,5,HYDRAS_GAZE,Hydra's Gaze,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/13-5.png,true
+armor,1,Light,0,ANCIENT_LIGHT_ARMOR,Ancient Light Armor,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-0.png,false
+armor,1,Light,1,FEATHER_DUSTER,Feather Duster,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-1.png,true
+armor,1,Light,2,HEMPEN_JACKET,Hempen Jacket,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-2.png,true
+armor,1,Light,3,REINFORCED_TOGA,Reinforced Toga,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-3.png,true
+armor,1,Light,4,SQUIRES_LIGHT_ARMOR,Squire's Light Armor,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-4.png,true
+armor,1,Light,5,RAGS_OF_THE_NAMELESS,Rags of the Nameless,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-5.png,true
+armor,1,Light,6,ABYSSAL_TUNIC,Abyssal Tunic,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-6.png,true
+armor,1,Light,7,ALL_STAR_TUNIC,All-Star Tunic,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-7.png,true
+armor,2,Medium,0,ANCIENT_MEDIUM_ARMOR,Ancient Medium Armor,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/2-0.png,false
+armor,2,Medium,1,WISHBONE_BREASTPLATE,Wishbone Breastplate,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/2-1.png,true
+armor,2,Medium,2,LEATHER_JERKIN,Leather Jerkin,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/2-2.png,true
+armor,2,Medium,3,LEATHER_CINGULUM,Leather Cingulum,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/2-3.png,true
+armor,2,Medium,4,SQUIRES_MEDIUM_ARMOR,Squire's Medium Armor,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/2-4.png,true
+armor,2,Medium,5,SEAWARDENS_MAIL,Seawarden's Mail,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/2-5.png,true
+armor,2,Medium,6,ALL_STAR_HAUBERK,All-Star Hauberk,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/2-6.png,true
+armor,3,Heavy,0,ANCIENT_HEAVY_ARMOR,Ancient Heavy Armor,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/3-0.png,false
+armor,3,Heavy,1,BOC_KNIGHT_MAIL,Boc-Knight Mail,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/3-1.png,true
+armor,3,Heavy,2,TIN_PLATE,Tin Plate,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/3-2.png,true
+armor,3,Heavy,3,BRONZE_CUIRASS,Bronze Cuirass,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/3-3.png,true
+armor,3,Heavy,4,SQUIRES_HEAVY_ARMOR,Squire's Heavy Armor,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/3-4.png,true
+armor,3,Heavy,5,ARMOR_OF_THE_DROWNED,Armor of the Drowned,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/3-5.png,true
+armor,3,Heavy,6,CORAL_BRIGANDINE,Coral Brigandine,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/3-6.png,true
+armor,3,Heavy,7,ALL_STAR_PLATE,All-Star Plate,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/3-7.png,true
+accessory,1,Accessory,1,SKALIS_EYE,Skali's Eye,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-1.png,true
+accessory,1,Accessory,2,TALS_CURIO,Tal's Curio,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-2.png,true
+accessory,1,Accessory,3,ELGRINS_AEGIS,Elgrin's Aegis,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-3.png,true
+accessory,1,Accessory,4,SECONDHAND_PANTS,Secondhand Pants,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-4.png,true
+accessory,1,Accessory,5,CHARGERS_MASK,Charger's Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-5.png,true
+accessory,1,Accessory,6,CONICAL_CAP_OF_REMEMBERANCE,Conical Cap of Remembrance,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-6.png,true
+accessory,1,Accessory,7,GORED_GOURD,Gored Gourd,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-7.png,true
+accessory,1,Accessory,8,RING_OF_DUELING,Ring of Dueling,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-8.png,true
+accessory,1,Accessory,9,BRONZE_CHAMPION_CROWN,Bronze Champion's Crown,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-9.png,true
+accessory,1,Accessory,10,SILVER_CHAMPION_CROWN,Silver Champion's Crown,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-10.png,true
+accessory,1,Accessory,11,GOLD_CHAMPION_CROWN,Gold Champion's Crown,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-11.png,true
+accessory,1,Accessory,12,CHAMPION_MEDAL,Champion's Medal,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-12.png,true
+accessory,1,Accessory,13,COOLER_HEAD,Cooler Head,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-13.png,true
+accessory,1,Accessory,14,BOCKNIGHT_HELM,Boc-Knight Helm,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-14.png,true
+accessory,1,Accessory,15,WOOD_DRAGON_MASK,Ancient Wood Dragon Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-15.png,true
+accessory,1,Accessory,16,BUNBUN_BONNET,Bunbun Bonnet,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-16.png,true
+accessory,1,Accessory,17,MELVILLES_SPECTACULAR_SPECTACLES,Melville's Spectacular Spectacles,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-17.png,true
+accessory,1,Accessory,18,MISTER_BIRTHDAY,Mister Birthday,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-18.png,true
+accessory,1,Accessory,19,SWEARING_HAT,Swearing Hat,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-19.png,true
+accessory,1,Accessory,20,DRUNKARDS_BANDANA,Drunkard's Bandana,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-20.png,true
+accessory,1,Accessory,21,OCTOHOOD,Octohood,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-21.png,true
+accessory,1,Accessory,22,COWL_OF_ETERNAL_HUNGER,Cowl of Eternal Hunger,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-22.png,true
+accessory,1,Accessory,23,CROWN_OF_SUBMERSIA,Crown of Submersia,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-23.png,true
+accessory,1,Accessory,24,SHELLMET,Shellmet,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-24.png,true
+accessory,1,Accessory,25,CERULEAN_HELM_OF_ASCENSION,Cerulean Helm of Ascension,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-25.png,true
+accessory,1,Accessory,26,CINNABAR_HELM_OF_ASCENSION,Cinnabar Helm of Ascension,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-26.png,true
+accessory,1,Accessory,27,CELADON_HELM_OF_ASCENSION,Celadon Helm of Ascension,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-27.png,true
+accessory,1,Accessory,28,ALL_STAR_HELM,All-Star Helm,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-28.png,true
+accessory,1,Accessory,29,MISS_BIRTHDAY,Misses Birthday,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-29.png,true
+accessory,2,Shield,0,ANCIENT_SHIELD,Ancient Shield,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/2-0.png,false
+accessory,2,Shield,1,YOLKED_BOCKLER,Yolked Bockler,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/2-1.png,true
+accessory,2,Shield,2,CUTTING_BOARD,Cutting Board,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/2-2.png,true
+accessory,2,Shield,3,BRONZE_SHIELD,Bronze Shield,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/2-3.png,true
+accessory,2,Shield,4,SQUIRES_SHIELD,Squire's Shield,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/2-4.png,true
+accessory,2,Shield,5,REEFWALL,Reefwall,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/2-5.png,true

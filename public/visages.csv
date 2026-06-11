@@ -1,0 +1,51 @@
+category,equipmentType,equipmentTypeName,displayId,enumName,name,imageUrl,hasArt
+weapon,2,2H Axe,50000,MINERS_PICKAXE,Miner's Pickaxe,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/2-50000.png,true
+weapon,4,Dagger,50000,GARDENING_TROWEL,Gardening Trowel,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/4-50000.png,true
+weapon,10,Staff,50000,WALKING_STICK,Walking Stick,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/10-50000.png,true
+weapon,11,1H Sword,50000,FISHING_ROD,Fishing Rod,https://defi-kingdoms.b-cdn.net/art-assets/equipment/weapon/11-50000.png,true
+armor,1,Light,50000,BLOATER_SUIT,Bloater Suit,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50000.png,true
+armor,1,Light,50001,KARATE_GI,Karate Gi,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50001.png,true
+armor,1,Light,50002,SBD_RED_SUIT,Super Blub Defender: Red Suit,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50002.png,true
+armor,1,Light,50003,SBD_PINK_SUIT,Super Blub Defender: Pink Suit,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50003.png,true
+armor,1,Light,50004,SBD_BLUE_SUIT,Super Blub Defender: Blue Suit,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50004.png,true
+armor,1,Light,50005,SBD_YELLOW_SUIT,Super Blub Defender: Yellow Suit,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50005.png,true
+armor,1,Light,50006,SBD_BLACK_SUIT,Super Blub Defender: Black Suit,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50006.png,true
+armor,1,Light,50007,SBD_GREEN_SUIT,Super Blub Defender: Green Suit,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50007.png,true
+armor,1,Light,50008,YELLOW_PANTHER_SUIT,Yellow Panther Suit,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50008.png,true
+armor,1,Light,50009,CHEF_SUIT,Chef Suit,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50009.png,true
+armor,1,Light,50010,DARK_SUMMONER_SUIT,Dark Summoner Suit,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50010.png,true
+armor,1,Light,50011,CHAMPIONSHIP_KARATE_GI,Champion Gi,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50011.png,true
+armor,1,Light,50012,FISHING_VEST,Fishing Vest,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50012.png,true
+armor,1,Light,50013,PADDED_ARCHIVIST_TUNIC,Padded Archivist Tunic,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50013.png,true
+armor,1,Light,50014,DOUG_HYPE_SUIT,Doug Hype Fur Coat,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50014.png,true
+armor,1,Light,50015,FORAGING_RAIMENTS,Foraging Raiments,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50015.png,true
+armor,1,Light,50016,FROST_BLOATER_SUIT,Frost Bloater Suit,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50016.png,true
+armor,1,Light,50017,GARDENER_GEAR,Gardening Gear,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50017.png,true
+armor,1,Light,50018,AXOLOTL_SUIT,Axolotl Suit,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50018.png,true
+armor,1,Light,50019,METISIAN_TOGA,Metisian Toga,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50019.png,true
+armor,1,Light,50020,HERCULES_MUSCLE_SUIT,Hercules Muscle Suit,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50020.png,true
+armor,1,Light,50021,MINER_OVERALLS,Miner's Overalls,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50021.png,true
+armor,1,Light,50022,FUNGAL_FROCK,Fungal Frock,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50022.png,true
+armor,1,Light,50023,GOD_OF_THE_ARENA_SUIT,God of the Arena Suit,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50023.png,true
+armor,1,Light,50024,YIELD_GUILD_GARB,Yield Guild Garb,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50024.png,true
+armor,1,Light,50025,METISIAN_GLADIATOR_RAIMENTS,Metisian Gladiator Raiments,https://defi-kingdoms.b-cdn.net/art-assets/equipment/armor/1-50025.png,true
+accessory,1,Accessory,50000,BLOATER_MASK,Bloater Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50000.png,true
+accessory,1,Accessory,50001,PLAGUE_MASK,Plague Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50001.png,true
+accessory,1,Accessory,50002,SBD_RED_MASK,Super Blub Defender: Red Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50002.png,true
+accessory,1,Accessory,50003,SBD_PINK_MASK,Super Blub Defender: Pink Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50003.png,true
+accessory,1,Accessory,50004,SBD_BLUE_MASK,Super Blub Defender: Blue Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50004.png,true
+accessory,1,Accessory,50005,SBD_YELLOW_MASK,Super Blub Defender: Yellow Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50005.png,true
+accessory,1,Accessory,50006,SBD_BLACK_MASK,Super Blub Defender: Black Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50006.png,true
+accessory,1,Accessory,50007,SBD_GREEN_MASK,Super Blub Defender: Green Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50007.png,true
+accessory,1,Accessory,50008,YELLOW_PANTHER_MASK,Yellow Panther Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50008.png,true
+accessory,1,Accessory,50009,CHEF_HAT,Chef Hat,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50009.png,true
+accessory,1,Accessory,50010,DARK_SUMMONER_MASK,Dark Summoner Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50010.png,true
+accessory,1,Accessory,50011,ROLANDO_MASK,Rolando Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50011.png,true
+accessory,1,Accessory,50012,DOUG_HYPE_GLASSES,Doug Hype Shades,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50012.png,true
+accessory,1,Accessory,50013,BIG_RED_BEAR_HEAD,Big Red Bear Head,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50013.png,true
+accessory,1,Accessory,50014,FROST_BLOATER_MASK,Frost Bloater Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50014.png,true
+accessory,1,Accessory,50015,AXOLOTL_MASK,Axolotl Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50015.png,true
+accessory,1,Accessory,50016,CROWN_OF_WISDOM,Crown of Wisdom,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50016.png,true
+accessory,1,Accessory,50017,MANNISH_CAP,Mannish Cap,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50017.png,true
+accessory,1,Accessory,50018,GOD_OF_THE_ARENA_MASK,God of the Arena Mask,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50018.png,true
+accessory,1,Accessory,50019,METISIAN_GLADIATOR_HELM,Metisian Gladiator Helm,https://defi-kingdoms.b-cdn.net/art-assets/equipment/accessory/1-50019.png,true
