@@ -1,3 +1,5 @@
 node_modules/
 dist/
 vite.log
+# Local bake input only: the mirrored Spine rigs feed the monster bake harness; the published output is public/monsters/.
+scripts/bake-monsters/rigs-cache/

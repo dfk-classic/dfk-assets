@@ -1,62 +1,43 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import EquipmentTile from './components/Equipment/EquipmentTile';
-import { loadEquipment } from './equipment';
-import { filterEquipment, TABS } from './filterEquipment';
-import type { FilterTab } from './filterEquipment';
-import type { EquipmentEntry } from './types/equipment';
+import React, { useEffect, useState } from 'react';
+import EquipmentView from './components/Equipment/EquipmentView';
+import ArtGallery from './components/Gallery/ArtGallery';
+import { SECTIONS, HERO_VIEWER_URL, sectionFromHash } from './sections';
+import type { SectionKey } from './sections';
 
-const btn: React.CSSProperties = {
-  background: '#1d2330', color: '#e9e4d8', border: '1px solid #2e3850',
-  padding: '7px 14px', borderRadius: 8, cursor: 'pointer', fontSize: 13,
+const navBtn: React.CSSProperties = {
+  background: 'transparent', color: '#8b93a3', border: 'none', borderBottom: '2px solid transparent',
+  padding: '6px 2px', cursor: 'pointer', fontSize: 14, fontWeight: 600,
 };
-// Full border shorthand, not borderColor: a tab button swaps between btn and activeBtn on rerender, and React warns (and can mis-style) when a shorthand and its longhand are mixed across renders.
-const activeBtn: React.CSSProperties = {
-  ...btn, border: '1px solid #e2922b', color: '#e2922b',
-};
-const inp: React.CSSProperties = {
-  background: '#141821', color: '#e9e4d8', border: '1px solid #2e3850',
-  padding: '7px 10px', borderRadius: 8, fontSize: 13,
+const navBtnActive: React.CSSProperties = {
+  ...navBtn, color: '#e2922b', borderBottom: '2px solid #e2922b',
 };
 
 export default function App() {
-  const [entries, setEntries] = useState<EquipmentEntry[]>([]);
-  const [tab, setTab] = useState<FilterTab>('all');
-  const [query, setQuery] = useState('');
-  const [status, setStatus] = useState('loading equipment…');
+  const [section, setSection] = useState<SectionKey>(() => sectionFromHash(window.location.hash));
 
+  // The hash is the source of truth so back/forward and shared links work; clicks just write the hash and this listener brings the state along.
   useEffect(() => {
-    loadEquipment([
-      () => fetch(import.meta.env.BASE_URL + 'gear.csv').then(r => r.text()),
-      () => fetch(import.meta.env.BASE_URL + 'visages.csv').then(r => r.text()),
-    ]).then(({ entries: loaded, status: loadStatus }) => {
-      setEntries(loaded);
-      setStatus(loadStatus);
-    });
+    const onHash = () => setSection(sectionFromHash(window.location.hash));
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
   }, []);
-
-  const shown = useMemo(() => filterEquipment(entries, tab, query), [entries, tab, query]);
 
   return (
     <div>
-      <h1>DFK Classic: Equipment Viewer</h1>
-      <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap', margin: '10px 0 6px' }}>
-        {TABS.map(t => (
-          <button key={t.key} style={tab === t.key ? activeBtn : btn} onClick={() => setTab(t.key)}>
-            {t.label}
+      <div style={{ display: 'flex', gap: 18, alignItems: 'baseline', flexWrap: 'wrap', borderBottom: '1px solid #2e3850', paddingBottom: 8 }}>
+        <h1 style={{ margin: 0 }}>DFK Classic: Assets</h1>
+        {SECTIONS.map(s => (
+          <button key={s.key} style={section === s.key ? navBtnActive : navBtn}
+                  onClick={() => { window.location.hash = s.key; }}>
+            {s.label}
           </button>
         ))}
-        <span style={{ width: 14 }} />
-        <input style={{ ...inp, width: 200 }} aria-label="search equipment" placeholder="search name…" value={query}
-               onChange={e => setQuery(e.target.value)} />
+        <a href={HERO_VIEWER_URL} style={{ ...navBtn, textDecoration: 'none' }}>Hero Viewer ↗</a>
       </div>
-      <div role="status" style={{ color: '#8b93a3', fontSize: 12, marginBottom: 14 }}>
-        {entries.length ? `${status} showing ${shown.length}.` : status}
-      </div>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
-        {shown.map(e => (
-          <EquipmentTile key={`${e.category}-${e.equipmentType}-${e.displayId}`} entry={e} />
-        ))}
-      </div>
+      {section === 'equipment' && <EquipmentView />}
+      {section === 'items' && <ArtGallery label="items" csv="items.csv" />}
+      {section === 'npcs' && <ArtGallery label="NPCs" csv="npcs.csv" />}
+      {section === 'monsters' && <ArtGallery label="monsters" csv="monsters.csv" />}
     </div>
   );
 }

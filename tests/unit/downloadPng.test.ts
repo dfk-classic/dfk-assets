@@ -27,6 +27,14 @@ describe("pngFileName", () => {
 	});
 });
 
+describe("artFileName", () => {
+	it("keeps the slug and the source extension, so NPC GIFs stay .gif", async () => {
+		const { artFileName } = await import("../../src/downloadPng");
+		expect(artFileName({ slug: "druid", imageUrl: "/dfk-assets/npcs/druid.gif" })).toBe("druid.gif");
+		expect(artFileName({ slug: "ambertaffy", imageUrl: "https://x.test/items/ambertaffy.png" })).toBe("ambertaffy.png");
+	});
+});
+
 describe("downloadPng", () => {
 	it("downloads the fetched blob through an object-URL anchor named after the item", async () => {
 		// jsdom implements neither createObjectURL nor anchor-click navigation, so both are stubbed; the assertions pin the wiring: blob in, object URL on the anchor, slug filename, click, deferred revoke.

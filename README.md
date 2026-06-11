@@ -1,22 +1,27 @@
-# DFK Classic Equipment Viewer
+# DFK Classic Assets
 
-Browse every DeFi Kingdoms equipment item and visage as icon tiles, served
-straight from the public game art CDN. Companion app to
-[hero-viewer](https://github.com/dfk-classic/hero-viewer) and
+Browse DeFi Kingdoms game art in one place: equipment and visages, items, town
+NPCs, and combat monsters, with a one-click download on every tile. Companion
+app to [hero-viewer](https://github.com/dfk-classic/hero-viewer) and
 [transcended-roster](https://github.com/dfk-classic/transcended-roster).
 
-## What it does
+**Live: https://gen-a.dev/dfk-assets/**
 
-- Shows all 170 known items as tiles: pixel-art icon, name, type, and display id
-- Tabs split the collection the way the game does: Weapons, Armor, Accessories,
-  Shields, and Visages (visages get a badge and their own tab)
-- Search matches display names and internal names, so "karate gi" also finds
-  the Champion Gi (internally CHAMPIONSHIP_KARATE_GI)
-- Items that exist in the game data but have no art yet (the id-0 Ancient
-  relics) render a labeled placeholder instead of a broken image
+## Sections
 
-No API or backend is needed: the dataset ships as two CSVs in `public/` and the
-icons load directly from the game's CDN.
+- **Equipment**: all 170 known weapons, armor, accessories, shields, and
+  visages, with tabs and search. Icons hotlink the public game art CDN.
+- **Items**: 157 item icons (potions, runes, crystals, fish, plants, eggs),
+  indexed straight off the CDN.
+- **NPCs**: 37 town characters (trader, vendor, jeweler, druid, portal keepers,
+  and friends) as their animated idle GIFs, mirrored from the game client.
+- **Monsters**: all 21 combat enemies (bocs, boars, blubs, harpy, sea hag,
+  nameless apostle...) as baked idle poses on transparency.
+- **Hero Viewer** links out to the existing
+  [hero card viewer](https://gen-a.dev/dfk-hero-viewer/).
+
+No API or backend anywhere: datasets ship as CSVs in `public/`, images either
+hotlink the stable CDN or are mirrored in the repo.
 
 ## Run it
 
@@ -25,38 +30,43 @@ npm install
 npm run dev
 ```
 
-Then open http://localhost:5175/dfk-equipment-viewer/. Requires Node 18+.
+Then open http://localhost:5175/dfk-assets/. Requires Node 18+.
 
-## The dataset
+## The datasets and where the art lives
 
-`public/gear.csv` (120 items) and `public/visages.csv` (50 visages) carry one
-row per item: `category, equipmentType, equipmentTypeName, displayId, enumName,
-name, imageUrl, hasArt`. Icons follow one URL pattern:
+| Dataset | Source | Strategy |
+|---|---|---|
+| `gear.csv`, `visages.csv` | `defi-kingdoms.b-cdn.net/art-assets/equipment/{category}/{type}-{displayId}.png` | hotlink (stable URLs) |
+| `items.csv` | `defi-kingdoms.b-cdn.net/art-assets/items/<slug>.png` | hotlink (stable URLs) |
+| `npcs.csv` + `public/npcs/` | game client Vite assets (`game.defikingdoms.com/assets/<name>-<hash>.gif`) | mirrored, hashes rotate every game deploy |
+| `monsters.csv` + `public/monsters/` | game client Spine rigs (`assets/rigs/monsters/<name>/`) | baked locally to static PNGs |
 
-```
-https://defi-kingdoms.b-cdn.net/art-assets/equipment/{category}/{equipmentType}-{displayId}.png
-```
-
-An item's identity is the `(category, equipmentType, displayId)` triple, which
+Equipment identity is the `(category, equipmentType, displayId)` triple, which
 is exactly what the WeaponCore, ArmorCore, and AccessoryCore contracts store
-per NFT; `displayId` alone is not unique (all four weapon visages share 50000).
-Visage displayIds start at 50000. Shields live in the accessory category
-(equipmentType 2) because they share AccessoryCore on chain.
+per NFT; `displayId` alone is not unique and visage ids start at 50000. The
+chain stores no art and `tokenURI()` returns an empty string, so everything
+here is extracted from the public game client.
 
-The chain stores no art and `tokenURI()` returns an empty string, so the CSVs
-are extracted from the game client itself. When a new visage or item ships:
+Refresh scripts, one per dataset:
 
 ```bash
-npm run refresh-data
+npm run refresh-data    # equipment + visages: re-extract from the game bundle, verify every URL
+node scripts/refresh-items.mjs   # items: re-index CDN slugs from the game bundle
+node scripts/refresh-npcs.mjs    # NPCs: re-resolve hashed GIF names and re-mirror
+node scripts/bake-monsters/bake-server.mjs   # monsters: serve the bake harness, then open it in a browser
 ```
 
-downloads the current game bundle, re-extracts the item tables, HEAD-verifies
-every icon URL, and rewrites both CSVs.
+Monster rigs are Spine animations. The public site deliberately ships baked
+static poses instead of a live Spine runtime: Esoteric's runtime license
+expects a paid Spine editor seat behind production use, and plain PNGs keep
+the site dependency-free. The bake harness renders each rig's idle pose once,
+locally, through the browser.
 
 ## Credits
 
-- DeFi Kingdoms, its game assets, artwork, and item designs are the property of
-  Kingdom Studios. This project is community-made and not affiliated with
-  Kingdom Studios.
-- Dataset extracted from the public DeFi Kingdoms game client; icons are served
-  from the game's own public CDN and are not redistributed here.
+- DeFi Kingdoms, its game assets, artwork, item, NPC, and monster designs are
+  the property of Kingdom Studios. This project is community-made and not
+  affiliated with Kingdom Studios.
+- Art provenance: extracted from the publicly served DeFi Kingdoms game client
+  and its public art CDN, 2026-06-11. Kingdom Studios logos are deliberately
+  excluded from the mirrored assets.

@@ -1,0 +1,51 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>monster bake</title>
+<style>body{background:#0e1014;color:#8b93a3;font-family:system-ui;padding:24px}</style>
+</head><body>
+<div id="status">starting…</div>
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@7.4.2/dist/pixi.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@esotericsoftware/spine-pixi@4.1.46/dist/iife/spine-pixi.min.js"></script>
+<script>
+(async () => {
+  const status = document.getElementById('status');
+  const log = (m) => { status.textContent = m; };
+  try {
+    const MONSTERS = ["baby-boar","baby-boc","big-boar","blub-archer","blub-knight","blub-priest","corrupted-citizen","crusted-crab","demon-boc","drowned-hero","drunkard","egg-boc","grifter","harpy","living-armor","lost-soul","nameless-apostle","octopilot","pickpocket","rocboc","sea-hag"];
+    const SCALE = 3, PAD = 6;
+    PIXI.BaseTexture.defaultOptions.scaleMode = PIXI.SCALE_MODES.NEAREST;
+    const app = new PIXI.Application({ width: 64, height: 64, backgroundAlpha: 0 });
+
+    for (const name of MONSTERS) {
+      log('baking ' + name + '…');
+      PIXI.Assets.add({ alias: name + '-skel', src: '/rigs/' + name + '/skeleton.json' });
+      PIXI.Assets.add({ alias: name + '-atlas', src: '/rigs/' + name + '/skeleton.atlas' });
+      await PIXI.Assets.load([name + '-skel', name + '-atlas']);
+      const s = spine.Spine.from(name + '-skel', name + '-atlas');
+
+      // Pose at the first frame of the idle loop; rigs without a literal "Idle" fall back to the first animation so every monster still gets a sensible pose.
+      const anims = s.skeleton.data.animations.map(a => a.name);
+      const anim = anims.includes('Idle') ? 'Idle' : (anims.find(a => a.toLowerCase().includes('idle')) ?? anims[0]);
+      s.state.setAnimation(0, anim, false);
+      s.update(0);
+
+      // Measure unscaled, then scale and offset so the whole monster lands inside the render texture with a small pad.
+      const b = s.getLocalBounds();
+      s.scale.set(SCALE);
+      s.x = -b.x * SCALE + PAD;
+      s.y = -b.y * SCALE + PAD;
+      const rt = PIXI.RenderTexture.create({ width: Math.ceil(b.width * SCALE) + PAD * 2, height: Math.ceil(b.height * SCALE) + PAD * 2 });
+      app.renderer.render(s, { renderTexture: rt });
+      const canvas = app.renderer.extract.canvas(rt);
+      const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
+      await fetch('/save?name=' + name, { method: 'POST', body: blob });
+      rt.destroy(true); s.destroy();
+    }
+    await fetch('/done');
+    log('DONE: all ' + MONSTERS.length + ' baked.');
+  } catch (err) {
+    log('FAILED: ' + err);
+    console.error(err);
+  }
+})();
+</script>
+</body></html>
