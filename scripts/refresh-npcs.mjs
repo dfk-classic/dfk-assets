@@ -42,7 +42,8 @@ const NPCS = [
 	["smuggler", "Smuggler"],
 	["stonecarver", "Stonecarver"],
 	["stylist", "Stylist"],
-	["summoner", "Summoner"],
+	// The bundle's asset slug says summoner, but the character is the Dark Summoner (the regular Summoner NPC looks different); display names are hand-kept here exactly because slugs lie.
+	["summoner", "Dark Summoner"],
 	["tafl", "Tafl"],
 	["trader", "Trader"],
 	["valkyrie", "Valkyrie"],
