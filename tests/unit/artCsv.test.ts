@@ -3,6 +3,7 @@ import { parseArtCsv, loadArt } from "../../src/artCsv";
 
 const HEADER = "slug,name,file";
 const NPC_ROW = "druid,Druid,npcs/druid.gif";
+const NPC_NOTED = "druid,Druid,npcs/druid.gif,\"Gardens, Crystalvale\"";
 const ITEM_ROW = "ambertaffy,Ambertaffy,https://defi-kingdoms.b-cdn.net/art-assets/items/ambertaffy.png";
 const resolve = (p: string) => "/dfk-assets/" + p;
 
@@ -20,6 +21,14 @@ describe("parseArtCsv", () => {
 		]);
 	});
 
+	it("carries the optional fourth column as the note, including quoted commas", () => {
+		// NPC rows note where the character stands ("Gardens, Crystalvale"); the comma inside the quoted note must not split the field, and three-column rows simply have no note key.
+		const [noted] = parseArtCsv([HEADER + ",note", NPC_NOTED].join("\n"), resolve);
+		expect(noted.note).toBe("Gardens, Crystalvale");
+		const [bare] = parseArtCsv([HEADER, NPC_ROW].join("\n"), resolve);
+		expect("note" in bare).toBe(false);
+	});
+
 	it("drops blank, short, and empty-field rows instead of emitting junk tiles", () => {
 		const messy = [HEADER, NPC_ROW, "", "only-slug", "a,,missing-name"].join("\n");
 		expect(parseArtCsv(messy, resolve)).toHaveLength(1);
@@ -33,16 +42,23 @@ describe("parseArtCsv", () => {
 });
 
 describe("loadArt", () => {
-	it("reports entries and a count status on success", async () => {
-		const result = await loadArt("NPCs", async () => [HEADER, NPC_ROW].join("\n"), resolve);
-		expect(result.entries).toHaveLength(1);
-		expect(result.status).toContain("NPCs loaded: 1");
+	it("merges every fetched CSV and reports a combined count status", async () => {
+		// The NPC gallery spans two datasets (live-client mirror plus renpen's archive of retired assets), so the loader takes a list of fetchers.
+		const result = await loadArt(
+			"NPCs",
+			[async () => [HEADER, NPC_ROW].join("\n"), async () => [HEADER, ITEM_ROW].join("\n")],
+			resolve,
+		);
+		expect(result.entries).toHaveLength(2);
+		expect(result.status).toContain("NPCs loaded: 2");
 	});
 
 	it("turns a fetch rejection into an error status instead of throwing", async () => {
-		const result = await loadArt("items", async () => {
-			throw new Error("network down");
-		});
+		const result = await loadArt("items", [
+			async () => {
+				throw new Error("network down");
+			},
+		]);
 		expect(result.entries).toEqual([]);
 		expect(result.status).toContain("items failed to load");
 		expect(result.status).toContain("network down");

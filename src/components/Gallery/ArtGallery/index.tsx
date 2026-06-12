@@ -8,27 +8,28 @@ const inp: React.CSSProperties = {
   padding: '7px 10px', borderRadius: 8, fontSize: 13,
 };
 
-// One searchable grid per simple art dataset (items, NPCs, monsters). The CSV is fetched when the section first mounts; relative file paths (mirrored NPC GIFs and baked monster poses) resolve against BASE_URL so the app works under the /dfk-assets/ subpath the same as in dev.
-export default function ArtGallery({ label, csv }: { label: string; csv: string }) {
+// One searchable grid per simple art dataset (items, NPCs, monsters). The CSVs are fetched when the section first mounts; relative file paths (mirrored NPC GIFs and baked monster loops) resolve against BASE_URL so the app works under the /dfk-assets/ subpath the same as in dev. csvs is joined into the effect key because an array prop is a fresh reference every render and would otherwise re-trigger the fetch loop.
+export default function ArtGallery({ label, csvs }: { label: string; csvs: string[] }) {
   const [entries, setEntries] = useState<ArtEntry[]>([]);
   const [query, setQuery] = useState('');
   const [status, setStatus] = useState(`loading ${label}…`);
+  const csvKey = csvs.join(',');
 
   useEffect(() => {
     loadArt(
       label,
-      () => fetch(import.meta.env.BASE_URL + csv).then(r => r.text()),
+      csvKey.split(',').map(csv => () => fetch(import.meta.env.BASE_URL + csv).then(r => r.text())),
       path => import.meta.env.BASE_URL + path,
     ).then(({ entries: loaded, status: loadStatus }) => {
       setEntries(loaded);
       setStatus(loadStatus);
     });
-  }, [label, csv]);
+  }, [label, csvKey]);
 
   const shown = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return entries;
-    return entries.filter(e => `${e.name} ${e.slug}`.toLowerCase().includes(q));
+    return entries.filter(e => `${e.name} ${e.slug} ${e.note ?? ''}`.toLowerCase().includes(q));
   }, [entries, query]);
 
   return (

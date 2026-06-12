@@ -15,4 +15,11 @@ describe("ArtTile", () => {
 		expect(screen.getByText("Druid")).toBeInTheDocument();
 		expect(screen.getByRole("button", { name: "download Druid image" })).toBeInTheDocument();
 	});
+
+	it("shows the location note only when the entry has one", () => {
+		const { rerender } = render(<ArtTile entry={{ ...DRUID, note: "Gardens, Crystalvale" }} />);
+		expect(screen.getByText("Gardens, Crystalvale")).toBeInTheDocument();
+		rerender(<ArtTile entry={DRUID} />);
+		expect(screen.queryByText("Gardens, Crystalvale")).toBeNull();
+	});
 });

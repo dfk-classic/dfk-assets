@@ -9,6 +9,7 @@ export default function ArtTile({ entry }: { entry: ArtEntry }) {
     <div className={styles.tile} title={entry.slug}>
       <img className={styles.art} src={entry.imageUrl} alt={entry.name} loading="lazy" />
       <div className={styles.name}>{entry.name}</div>
+      {entry.note && <div className={styles.meta}>{entry.note}</div>}
       <button className={styles.download} onClick={() => downloadImage(entry.imageUrl, artFileName(entry))}
               aria-label={`download ${entry.name} image`}>
         Download

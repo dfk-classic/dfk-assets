@@ -1,38 +1,67 @@
-slug,name,file
-agent-leafblade,Agent Leafblade,npcs/agent-leafblade.gif
-angler,Angler,npcs/angler.gif
-aoisla,Aoisla,npcs/aoisla.gif
-bjorn,Bjorn,npcs/bjorn.gif
-caravan-leader,Caravan Leader,npcs/caravan-leader.gif
-castle_archivist_gribbitz,Archivist Gribbitz,npcs/castle_archivist_gribbitz.gif
-castle_artist,Castle Artist,npcs/castle_artist.gif
-castle_envoy,Castle Envoy,npcs/castle_envoy.gif
-cliff,Cliff,npcs/cliff.gif
-crier,Town Crier,npcs/crier.gif
-crystalmanager,Crystal Manager,npcs/crystalmanager.gif
-dockmaster,Dockmaster,npcs/dockmaster.gif
-druid,Druid,npcs/druid.gif
-emberling-party,Emberling Party,npcs/emberling-party.gif
-esoteric-wanderer,Esoteric Wanderer,npcs/esoteric-wanderer.gif
-forester,Forester,npcs/forester.gif
-greenskeeper,Greenskeeper,npcs/greenskeeper.gif
-hatcher,Hatcher,npcs/hatcher.gif
-hunter,Hunter,npcs/hunter.gif
-jester,Jester,npcs/jester.gif
-jeweler,Jeweler,npcs/jeweler.gif
-npc-alchemist-cropped,Alchemist,npcs/npc-alchemist-cropped.gif
-nutritionist,Nutritionist,npcs/nutritionist.gif
-olga,Olga,npcs/olga.gif
-pickman,Pickman,npcs/pickman.gif
-portal-amba,Portal Keeper Amba,npcs/portal-amba.gif
-portal-zagreb,Portal Keeper Zagreb,npcs/portal-zagreb.gif
-rafflemaster,Rafflemaster,npcs/rafflemaster.gif
-sheldon,Sheldon,npcs/sheldon.gif
-smuggler,Smuggler,npcs/smuggler.gif
-stonecarver,Stonecarver,npcs/stonecarver.gif
-stylist,Stylist,npcs/stylist.gif
-summoner,Dark Summoner,npcs/summoner.gif
-tafl,Tafl,npcs/tafl.gif
-trader,Trader,npcs/trader.gif
-valkyrie,Valkyrie,npcs/valkyrie.gif
-vendor,Vendor,npcs/vendor.gif
+slug,name,file,note
+agent-leafblade,Agent Leafblade,npcs/agent-leafblade.gif,Crystalvale
+angler,Angler,npcs/angler.gif,Professions
+aoisla,Aoisla,npcs/aoisla.gif,"Marketplace, Crystalvale"
+balconyman,Balcony Man,npcs/balconyman.gif,"Registry, Sundered Isles"
+bjorn,Bjorn,npcs/bjorn.gif,Crystalvale
+blondeknight,Blonde Knight,npcs/blondeknight.gif,"Docks, Sundered Isles"
+blub,Blub,npcs/blub.gif,Crystalvale
+brock-odile,Brock O'Dile,npcs/brock-odile.gif,"Registry, Sundered Isles"
+caravan-leader,Caravan Leader,npcs/caravan-leader.gif,"Professions, Crystalvale"
+castle_archivist_gribbitz,Archivist Gribbitz,npcs/castle_archivist_gribbitz.gif,"Castle, Crystalvale"
+castle_artist,Castle Artist,npcs/castle_artist.gif,"Castle, Crystalvale"
+castle_envoy,Castle Envoy,npcs/castle_envoy.gif,"Castle, Crystalvale"
+cat,Cat,npcs/cat.gif,"Registry, Sundered Isles"
+catfishguard,Catfish Guard,npcs/catfishguard.gif,"Registry, Sundered Isles"
+cliff,Cliff,npcs/cliff.gif,"Combat Testing Grounds, Crystalvale"
+crabbins,Crabbins,npcs/crabbins.gif,"Docks, Sundered Isles"
+crier,Town Crier,npcs/crier.gif,"Marketplace, Crystalvale"
+crystalmanager,Crystal Manager,npcs/crystalmanager.gif,"Jeweler, Crystalvale"
+dockmaster,Dockmaster,npcs/dockmaster.gif,"Docks, Crystalvale"
+dress_lady,Lady in a Dress,npcs/dress_lady.gif,"Docks, Sundered Isles"
+druid,Druid,npcs/druid.gif,"Gardens, Crystalvale"
+dwarves,Dwarves,npcs/dwarves.gif,"Registry, Sundered Isles"
+emberling-party,Emberling Party,npcs/emberling-party.gif,Crystalvale
+esoteric-wanderer,Esoteric Wanderer,npcs/esoteric-wanderer.gif,Meditation Circle
+fishguards,Fish Guards,npcs/fishguards.gif,"Docks, Sundered Isles"
+forester,Forester,npcs/forester.gif,Professions
+frog,Frog,npcs/frog.gif,"Registry, Sundered Isles"
+frogchanter,Frog Chanter,npcs/frogchanter.gif,"Docks, Sundered Isles"
+frogtender,Frog Tender,npcs/frogtender.gif,"Docks, Sundered Isles"
+goblinwarrior,Goblin Warrior,npcs/goblinwarrior.gif,"Registry, Sundered Isles"
+goldfishguard,Goldfish Guard,npcs/goldfishguard.gif,"Registry, Sundered Isles"
+greenskeeper,Greenskeeper,npcs/greenskeeper.gif,Gardens
+green_beer,Green Beer Patron,npcs/green_beer.gif,"Docks, Sundered Isles"
+hatcher,Hatcher,npcs/hatcher.gif,"Marketplace, Crystalvale"
+hunter,Hunter,npcs/hunter.gif,"Marketplace, Crystalvale"
+ironbrother,Iron Brother,npcs/ironbrother.gif,"Docks, Sundered Isles"
+jester,Jester,npcs/jester.gif,"Castle, Crystalvale"
+jeweler,Jeweler,npcs/jeweler.gif,"Jeweler, Crystalvale"
+mastererik,Master Erik,npcs/mastererik.gif,Sundered Isles
+npc-alchemist-cropped,Alchemist,npcs/npc-alchemist-cropped.gif,"Alchemist, Crystalvale"
+nutritionist,Nutritionist,npcs/nutritionist.gif,"Marketplace, Crystalvale"
+olga,Olga,npcs/olga.gif,"Marketplace, Crystalvale"
+orange_frog,Orange Frog,npcs/orange_frog.gif,"Docks, Sundered Isles"
+pickman,Pickman,npcs/pickman.gif,Professions
+portal-amba,Portal Keeper Amba,npcs/portal-amba.gif,"Portal, Crystalvale"
+portal-zagreb,Portal Keeper Zagreb,npcs/portal-zagreb.gif,"Portal, Crystalvale"
+rafflemaster,Rafflemaster,npcs/rafflemaster.gif,"Castle, Crystalvale"
+redgreenman,Red-Green Man,npcs/redgreenman.gif,"Docks, Sundered Isles"
+registrar,Registrar,npcs/registrar.gif,"Registry, Sundered Isles"
+sbds,Super Blub Defenders,npcs/sbds.gif,"Registry, Sundered Isles"
+sd-packboc,Packboc,npcs/sd-packboc.gif,"Docks, Sundered Isles"
+sharkules,Sharkules,npcs/sharkules.gif,"Docks, Sundered Isles"
+sheldon,Sheldon,npcs/sheldon.gif,"Combat Testing Grounds, Crystalvale"
+sheldon-reroll,Sheldon (Reroll),npcs/sheldon-reroll.gif,"Docks, Sundered Isles"
+smuggler,Smuggler,npcs/smuggler.gif,"Docks, Crystalvale"
+snakecultist,Snake Cultist,npcs/snakecultist.gif,"Registry, Sundered Isles"
+stonecarver,Stonecarver,npcs/stonecarver.gif,"Portal, Crystalvale"
+stylist,Stylist,npcs/stylist.gif,"Marketplace, Crystalvale"
+summoner,Dark Summoner,npcs/summoner.gif,Crystalvale
+tafl,Tafl,npcs/tafl.gif,"Jeweler, Crystalvale"
+togwa,Togwa,npcs/togwa.gif,"Docks, Sundered Isles"
+trader,Trader,npcs/trader.gif,"Marketplace, Crystalvale"
+valkyrie,Valkyrie,npcs/valkyrie.gif,Divine Altar
+vendor,Vendor,npcs/vendor.gif,"Marketplace, Crystalvale"
+witch,Witch,npcs/witch.gif,"Docks, Sundered Isles"
+wizoholic,Wizoholic,npcs/wizoholic.gif,"Registry, Sundered Isles"

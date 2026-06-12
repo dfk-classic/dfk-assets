@@ -35,9 +35,9 @@ export default function App() {
         <a href={HERO_VIEWER_URL} style={{ ...navBtn, textDecoration: 'none' }}>Hero Viewer ↗</a>
       </div>
       {section === 'equipment' && <EquipmentView />}
-      {section === 'items' && <ArtGallery label="items" csv="items.csv" />}
-      {section === 'npcs' && <ArtGallery label="NPCs" csv="npcs.csv" />}
-      {section === 'monsters' && <ArtGallery label="monsters" csv="monsters.csv" />}
+      {section === 'items' && <ArtGallery label="items" csvs={['items.csv']} />}
+      {section === 'npcs' && <ArtGallery label="NPCs" csvs={['npcs.csv', 'npcs-archive.csv']} />}
+      {section === 'monsters' && <ArtGallery label="monsters" csvs={['monsters.csv']} />}
     </div>
   );
 }

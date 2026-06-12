@@ -37,7 +37,7 @@ for (const m of MONSTERS) {
 }
 
 mkdirSync(join(publicDir, "monsters"), { recursive: true });
-const saved = new Set();
+const saved = new Map(); // name -> ext actually written, so monsters.csv points at what exists
 
 const TYPES = { ".json": "application/json", ".atlas": "text/plain", ".png": "image/png", ".html": "text/html" };
 
@@ -45,17 +45,19 @@ createServer(async (req, res) => {
 	const url = new URL(req.url, "http://localhost");
 	if (req.method === "POST" && url.pathname === "/save") {
 		const name = url.searchParams.get("name");
+		// The bake page asks for gif (animated idle loop); png stays accepted so the old static bake still works if ever needed.
+		const ext = url.searchParams.get("ext") === "png" ? "png" : "gif";
 		if (!MONSTERS.includes(name)) { res.writeHead(400).end(); return; }
 		const chunks = [];
 		for await (const c of req) chunks.push(c);
-		writeFileSync(join(publicDir, "monsters", `${name}.png`), Buffer.concat(chunks));
-		saved.add(name);
-		console.log(`baked ${name}.png (${saved.size}/${MONSTERS.length})`);
+		writeFileSync(join(publicDir, "monsters", `${name}.${ext}`), Buffer.concat(chunks));
+		saved.set(name, ext);
+		console.log(`baked ${name}.${ext} (${saved.size}/${MONSTERS.length})`);
 		res.writeHead(200).end("ok");
 		return;
 	}
 	if (url.pathname === "/done") {
-		const rows = MONSTERS.filter((m) => saved.has(m)).map((m) => `${m},${titleCase(m)},monsters/${m}.png`);
+		const rows = MONSTERS.filter((m) => saved.has(m)).map((m) => `${m},${titleCase(m)},monsters/${m}.${saved.get(m)}`);
 		writeFileSync(join(publicDir, "monsters.csv"), "slug,name,file\n" + rows.join("\n") + "\n");
 		console.log(`DONE: monsters.csv ${rows.length} rows${rows.length < MONSTERS.length ? " (INCOMPLETE)" : ""}`);
 		res.writeHead(200).end("done");

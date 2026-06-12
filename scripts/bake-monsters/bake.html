@@ -5,47 +5,77 @@
 <div id="status">starting…</div>
 <script src="https://cdn.jsdelivr.net/npm/pixi.js@7.4.2/dist/pixi.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@esotericsoftware/spine-pixi@4.1.46/dist/iife/spine-pixi.min.js"></script>
-<script>
-(async () => {
-  const status = document.getElementById('status');
-  const log = (m) => { status.textContent = m; };
-  try {
-    const MONSTERS = ["baby-boar","baby-boc","big-boar","blub-archer","blub-knight","blub-priest","corrupted-citizen","crusted-crab","demon-boc","drowned-hero","drunkard","egg-boc","grifter","harpy","living-armor","lost-soul","nameless-apostle","octopilot","pickpocket","rocboc","sea-hag"];
-    const SCALE = 3, PAD = 6;
-    PIXI.BaseTexture.defaultOptions.scaleMode = PIXI.SCALE_MODES.NEAREST;
-    const app = new PIXI.Application({ width: 64, height: 64, backgroundAlpha: 0 });
+<script type="module">
+import { GIFEncoder, quantize, applyPalette } from 'https://cdn.jsdelivr.net/npm/gifenc@1.0.3/+esm';
 
-    for (const name of MONSTERS) {
-      log('baking ' + name + '…');
-      PIXI.Assets.add({ alias: name + '-skel', src: '/rigs/' + name + '/skeleton.json' });
-      PIXI.Assets.add({ alias: name + '-atlas', src: '/rigs/' + name + '/skeleton.atlas' });
-      await PIXI.Assets.load([name + '-skel', name + '-atlas']);
-      const s = spine.Spine.from(name + '-skel', name + '-atlas');
+const status = document.getElementById('status');
+const log = (m) => { status.textContent = m; };
+try {
+  const MONSTERS = ["baby-boar","baby-boc","big-boar","blub-archer","blub-knight","blub-priest","corrupted-citizen","crusted-crab","demon-boc","drowned-hero","drunkard","egg-boc","grifter","harpy","living-armor","lost-soul","nameless-apostle","octopilot","pickpocket","rocboc","sea-hag"];
+  const SCALE = 3, PAD = 6, FPS = 12, MAX_FRAMES = 60;
+  PIXI.BaseTexture.defaultOptions.scaleMode = PIXI.SCALE_MODES.NEAREST;
+  const app = new PIXI.Application({ width: 64, height: 64, backgroundAlpha: 0 });
 
-      // Pose at the first frame of the idle loop; rigs without a literal "Idle" fall back to the first animation so every monster still gets a sensible pose.
-      const anims = s.skeleton.data.animations.map(a => a.name);
-      const anim = anims.includes('Idle') ? 'Idle' : (anims.find(a => a.toLowerCase().includes('idle')) ?? anims[0]);
-      s.state.setAnimation(0, anim, false);
-      s.update(0);
+  for (const name of MONSTERS) {
+    log('baking ' + name + '…');
+    PIXI.Assets.add({ alias: name + '-skel', src: '/rigs/' + name + '/skeleton.json' });
+    PIXI.Assets.add({ alias: name + '-atlas', src: '/rigs/' + name + '/skeleton.atlas' });
+    await PIXI.Assets.load([name + '-skel', name + '-atlas']);
+    const s = spine.Spine.from(name + '-skel', name + '-atlas');
 
-      // Measure unscaled, then scale and offset so the whole monster lands inside the render texture with a small pad.
+    // Loop the idle animation; rigs without a literal "Idle" fall back to the first animation so every monster still animates sensibly.
+    const anims = s.skeleton.data.animations;
+    const animName = anims.map(a => a.name).includes('Idle') ? 'Idle' : (anims.map(a => a.name).find(a => a.toLowerCase().includes('idle')) ?? anims[0].name);
+    const duration = anims.find(a => a.name === animName).duration;
+    const frames = Math.max(2, Math.min(MAX_FRAMES, Math.round(duration * FPS)));
+    const dt = duration / frames;
+
+    // Prepass: union the local bounds across the whole loop so a wing flap or hop never clips at the canvas edge.
+    s.state.setAnimation(0, animName, true);
+    s.update(0);
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    for (let f = 0; f < frames; f++) {
       const b = s.getLocalBounds();
-      s.scale.set(SCALE);
-      s.x = -b.x * SCALE + PAD;
-      s.y = -b.y * SCALE + PAD;
-      const rt = PIXI.RenderTexture.create({ width: Math.ceil(b.width * SCALE) + PAD * 2, height: Math.ceil(b.height * SCALE) + PAD * 2 });
+      minX = Math.min(minX, b.x); minY = Math.min(minY, b.y);
+      maxX = Math.max(maxX, b.x + b.width); maxY = Math.max(maxY, b.y + b.height);
+      s.update(dt);
+    }
+    const w = Math.ceil((maxX - minX) * SCALE) + PAD * 2;
+    const h = Math.ceil((maxY - minY) * SCALE) + PAD * 2;
+    s.scale.set(SCALE);
+    s.x = -minX * SCALE + PAD;
+    s.y = -minY * SCALE + PAD;
+
+    // Render the loop fresh from frame zero and feed each frame to the encoder. dispose 2 (restore to background) keeps transparent regions from stacking frame over frame.
+    s.state.setAnimation(0, animName, true);
+    s.update(0);
+    const rt = PIXI.RenderTexture.create({ width: w, height: h });
+    const gif = GIFEncoder();
+    const delay = Math.round(1000 / FPS);
+    for (let f = 0; f < frames; f++) {
       app.renderer.render(s, { renderTexture: rt });
       const canvas = app.renderer.extract.canvas(rt);
-      const blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
-      await fetch('/save?name=' + name, { method: 'POST', body: blob });
-      rt.destroy(true); s.destroy();
+      const { data } = canvas.getContext('2d').getImageData(0, 0, w, h);
+      const palette = quantize(data, 256, { format: 'rgba4444', oneBitAlpha: true });
+      const index = applyPalette(data, palette, 'rgba4444');
+      const transparentIndex = palette.findIndex(p => p[3] === 0);
+      gif.writeFrame(index, w, h, {
+        palette, delay, dispose: 2,
+        transparent: transparentIndex >= 0,
+        transparentIndex: Math.max(0, transparentIndex),
+      });
+      s.update(dt);
     }
-    await fetch('/done');
-    log('DONE: all ' + MONSTERS.length + ' baked.');
-  } catch (err) {
-    log('FAILED: ' + err);
-    console.error(err);
+    gif.finish();
+    await fetch('/save?name=' + name + '&ext=gif', { method: 'POST', body: new Blob([gif.bytes()], { type: 'image/gif' }) });
+    rt.destroy(true); s.destroy();
+    log('baked ' + name + ' (' + frames + ' frames, ' + w + 'x' + h + ')');
   }
-})();
+  await fetch('/done');
+  log('DONE: all ' + MONSTERS.length + ' baked as GIFs.');
+} catch (err) {
+  log('FAILED: ' + err);
+  console.error(err);
+}
 </script>
 </body></html>
