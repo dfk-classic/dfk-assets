@@ -79,7 +79,7 @@ function parsePairs(obj) {
 function nestedNameMap(js, anchorName, typeMember) {
 	const anchorIdx = js.indexOf(`:"${anchorName}"`);
 	if (anchorIdx < 0) fail(`anchor item "${anchorName}" not found`);
-	const back = js.slice(Math.max(0, anchorIdx - 300), anchorIdx);
+	const back = js.slice(0, anchorIdx);
 	const keyVarMatch = [...back.matchAll(new RegExp(`\\[([A-Za-z0-9_$]+)\\.${typeMember}\\]:\\{`, "g"))].pop();
 	if (!keyVarMatch) fail(`no [VAR.${typeMember}]:{ group near "${anchorName}"`);
 	const keyVar = keyVarMatch[1];
